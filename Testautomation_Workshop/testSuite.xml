@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression" parallel="tests">
+    <test name="createDocumentOption1">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+        	<class name="Day1.DocumentCreateTest"/>
+        </classes>
+    </test>
+    <test name="createDocumentOption2">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+        	<class name="Day1.DocumentCreateTest"/>
+        </classes>
+    </test>
+</suite>

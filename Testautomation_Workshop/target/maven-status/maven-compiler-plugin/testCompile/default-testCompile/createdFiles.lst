@@ -1,0 +1,5 @@
+stepsDefinitions\Feature1.class
+base\BaseTests.class
+Day1\DocumentCreateTest.class
+Day1\Task1.class
+runner\TestRunner.class

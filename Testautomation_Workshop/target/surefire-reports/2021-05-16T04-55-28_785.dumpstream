@@ -1,0 +1,4 @@
+# Created at 2021-05-16T04:55:29.923
+Boot Manifest-JAR contains absolute paths in classpath 'E:\salma\ITI\Courses\API Testing\Workspace\Testautomation_Workshop\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+
