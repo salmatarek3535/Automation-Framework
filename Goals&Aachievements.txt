@@ -1,0 +1,32 @@
+Goal 1:
+
+I have attended performance training , completed it and made the assignments required.
+Completing assigned trainings on time.
+I always share the knowledge to my team , participate in improving our manual and automation scripts to save time.
+I gave KT to newcomers.
+I always commited to working hours ,respond fast to my emails and active on workplace try to catch the important posts.
+shadowing with Senior Test Engineer/QA Automation in my team and try to learn from them.
+
+Goal 2:
+
+Improving customer satisfaction and got thank you mail from our customer.
+Delivering the features and tasks on time. 
+Raising Critical defects on time.
+Attending all required meetings on time.
+
+Goal 3:
+
+I have implemented automation scripts for DSH-UI.
+Reusing and updating our automation scripts to save time.
+I have improved postman scripts to be general and changed based on the environment used.
+
+Goal 4:
+
+I have attended performance training for beginners.
+I have completed my task to create some Web automation scripts for SolutionHub-UI.
+
+Goal 5:
+
+I have participated in three PI plannings.
+I have pushed and merged the automation scripts to gitlab repository.
+Communicating with each other through slack and Microsoft teams to manage work from home.
