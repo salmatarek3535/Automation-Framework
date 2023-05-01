@@ -42,6 +42,7 @@ public class BrowserActions {
                
            case "firefox":
                /** no need to use WebDriverManager in selenium4, it is already included in Selenium4 **/
+
                //WebDriverManager.firefoxdriver().setup();
 	       /*System.setProperty("webdriver.chrome.driver","resources/chromedriver.exe");*/
                if(headless)
