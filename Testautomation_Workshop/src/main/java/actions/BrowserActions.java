@@ -30,7 +30,8 @@ public class BrowserActions {
        switch(browser)
        {
             case "chrome":
-                WebDriverManager.chromedriver().setup();
+                /** no need to use WebDriverManager in selenium4, it is already included in Selenium4 **/
+                //WebDriverManager.chromedriver().setup();
                 if(headless)
        		    driver= new ChromeDriver((ChromeOptions) runHeadless(browser));
                 else
@@ -40,7 +41,8 @@ public class BrowserActions {
                break;
                
            case "firefox":
-               WebDriverManager.firefoxdriver().setup();
+               /** no need to use WebDriverManager in selenium4, it is already included in Selenium4 **/
+               //WebDriverManager.firefoxdriver().setup();
 	       /*System.setProperty("webdriver.chrome.driver","resources/chromedriver.exe");*/
                if(headless)
 	            driver = new FirefoxDriver((FirefoxOptions) runHeadless(browser));
@@ -52,8 +54,6 @@ public class BrowserActions {
 
 		  
 }
-
-
 
    public void maximizeWindow()
    {

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 //import org.testng.Assert;
 
 public class UIActions {
@@ -25,18 +27,18 @@ public class UIActions {
             {
                 case "presence":
 
-                    element=(new WebDriverWait(driver,15).until(ExpectedConditions.
+                    element=(new WebDriverWait(driver,Duration.ofSeconds(15)).until(ExpectedConditions.
                             presenceOfElementLocated(locator)));
                     break;
 
                 case "visibility":
 
-                    element=(new WebDriverWait(driver,15).until(ExpectedConditions.
+                    element=(new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.
                             visibilityOfElementLocated(locator)));
                     break;
 
                 case "clickable":
-                    element=(new WebDriverWait(driver,15).until(ExpectedConditions.
+                    element=(new WebDriverWait(driver,Duration.ofSeconds(15)).until(ExpectedConditions.
                             elementToBeClickable(locator)));
                     break;
             }
