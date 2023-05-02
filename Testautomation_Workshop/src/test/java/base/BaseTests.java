@@ -4,7 +4,9 @@ import actions.BrowserActions;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
 import wrappers.PropertiesFileReader;
 
@@ -25,7 +27,7 @@ public class BaseTests extends AbstractTestNGCucumberTests
     /*@Parameters("browser")
     public void setUp(String browser)*/
 
-    @BeforeClass
+    @BeforeMethod
     public void setUp()
     {
         driver= browserActions.driverInit(browser,false);
@@ -34,7 +36,7 @@ public class BaseTests extends AbstractTestNGCucumberTests
         homePage= new HomePage(driver);
     }
 
-    @AfterClass
+    @AfterMethod
     public void tearDown()
     {
 

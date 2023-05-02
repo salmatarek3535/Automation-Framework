@@ -21,28 +21,16 @@ public class HomePage {
     public HomePage(WebDriver driver)
     {
         this.driver= driver;
+        uiActions= new UIActions(driver);
     }
 
     public ClassAttributePage openClassAttributePage()
     {
-        uiActions= new UIActions(driver);
         uiActions.waitForElement(classAttributeLocator, "clickable");
         uiActions.waitForElement(classAttributeTextLocator, "presence");
-//        try
-//        {
-//            new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.elementToBeClickable(classAttributeLocator));
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//        }
-//        try
-//        {
-//            new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.presenceOfElementLocated(classAttributeTextLocator));
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//        }
+
         if(uiActions.getElementText(classAttributeTextLocator).contains("Check that class attribute based XPath is well formed"))
         {
-            //driver.findElement(classAttributeLocator).click();
             uiActions.clickOnElement(classAttributeLocator);
         }
         return new ClassAttributePage(driver);
@@ -50,21 +38,12 @@ public class HomePage {
 
     public DynamicTablePage openDynamicTablePage()
     {
-        try
+        uiActions.waitForElement(dynamicTableLocator, "clickable");
+        uiActions.waitForElement(dynamicTableTextLocator, "presence");
+
+        if(uiActions.getElementText(dynamicTableTextLocator).contains("Verify cell value in a dynamic table"))
         {
-            new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.elementToBeClickable(dynamicTableLocator));
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        try
-        {
-            new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.presenceOfElementLocated(dynamicTableTextLocator));
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        if(driver.findElement(dynamicTableTextLocator).getText().contains("Verify cell value in a dynamic table"))
-        {
-            driver.findElement(dynamicTableLocator).click();
+            uiActions.clickOnElement(dynamicTableLocator);
         }
         return new DynamicTablePage(driver);
     }
