@@ -22,7 +22,7 @@ public class BrowserActions {
 
    private WebDriver driver;
    //private WebElement element;
-   private By locator= By.xpath("//a[text()='Create a Document ']");
+   private By locator= By.id("title");
 
    public WebDriver driverInit(String browser, boolean headless)
    {
