@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 //import org.testng.Assert;
 
 public class UIActions {
@@ -55,15 +56,20 @@ public class UIActions {
 
     }
 
+    public List<WebElement> getElementsForSpecificLocator(By locator)
+    {
+        return driver.findElements(locator);
+    }
+
     public void clickElement(By locator, String waiting_condition, By Expected, String Expected_waiting_condition)
     {
-         boolean result= waitForElement(locator,waiting_condition);
-         if(result== true)
-         {
-             //clickOnElement(locator);
-             driver.findElement(locator).click();
-             result= waitForElement(Expected,Expected_waiting_condition); // put it in the other action
-         }
+        boolean result= waitForElement(locator,waiting_condition);
+        if(result== true)
+        {
+            //clickOnElement(locator);
+            driver.findElement(locator).click();
+            result= waitForElement(Expected,Expected_waiting_condition); // put it in the other action
+        }
     }
 
     public void clickOnElement(By locator)
@@ -76,5 +82,13 @@ public class UIActions {
         return driver.findElement(locator).getText();
     }
 
+    public String getALertText()
+    {
+        return driver.switchTo().alert().getText();
+    }
+    public void closeALert()
+    {
+        driver.switchTo().alert().dismiss();
+    }
 
 }
