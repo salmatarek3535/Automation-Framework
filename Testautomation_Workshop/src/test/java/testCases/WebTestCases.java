@@ -1,7 +1,6 @@
 package testCases;
 
-import base.BaseTest;
-import browserActions.BrowserUtilities;
+import base.BaseTests;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -11,19 +10,7 @@ import pages.ClassAttributePage;
 import pages.DynamicTablePage;
 import pages.HomePage;
 
-public class WebTestCases extends BaseTest {
-
-    private static WebDriver driver;
-    private HomePage homePage;
-    private BrowserUtilities browserUtilities= new BrowserUtilities();
-    private static String baseURL="http://www.uitestingplayground.com/";
-
-    @BeforeMethod
-    public void setUp()
-    {
-        driver = browserUtilities.openBrowser(baseURL);
-        homePage= new HomePage(driver);
-    }
+public class WebTestCases extends BaseTests {
 
     @Test
     public void validateClassAttribute()
@@ -44,9 +31,5 @@ public class WebTestCases extends BaseTest {
         Assert.assertTrue(cpuValue.contains(cpuValueInTaskTable));
     }
 
-    @AfterMethod
-    public void tearDown()
-    {
-        driver.quit();
-    }
+
 }
