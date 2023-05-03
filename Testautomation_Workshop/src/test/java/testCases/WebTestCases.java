@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pages.AjaxDataPage;
 import pages.ClassAttributePage;
 import pages.DynamicTablePage;
 import pages.HomePage;
@@ -29,6 +30,13 @@ public class WebTestCases extends BaseTests {
         String cpuValueInTaskTable = dynamicTablePage.getCPUValueInTaskTable(browser);
         String cpuValue= dynamicTablePage.getCPUValue();
         Assert.assertTrue(cpuValue.contains(cpuValueInTaskTable));
+    }
+
+    @Test
+    public void verifyAjaxRequest()
+    {
+        AjaxDataPage ajaxDataPage= homePage.openAjaxDataPage();
+       ajaxDataPage.triggerAjaxRequest();
     }
 
 

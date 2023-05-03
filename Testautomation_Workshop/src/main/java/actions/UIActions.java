@@ -28,18 +28,18 @@ public class UIActions {
             {
                 case "presence":
 
-                    element=(new WebDriverWait(driver,Duration.ofSeconds(15)).until(ExpectedConditions.
+                    element=(new WebDriverWait(driver,Duration.ofSeconds(20)).until(ExpectedConditions.
                             presenceOfElementLocated(locator)));
                     break;
 
                 case "visibility":
 
-                    element=(new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.
+                    element=(new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.
                             visibilityOfElementLocated(locator)));
                     break;
 
                 case "clickable":
-                    element=(new WebDriverWait(driver,Duration.ofSeconds(15)).until(ExpectedConditions.
+                    element=(new WebDriverWait(driver,Duration.ofSeconds(20)).until(ExpectedConditions.
                             elementToBeClickable(locator)));
                     break;
             }

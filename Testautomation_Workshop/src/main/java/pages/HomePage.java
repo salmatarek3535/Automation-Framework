@@ -16,6 +16,8 @@ public class HomePage {
     private static final By classAttributeTextLocator= By.xpath("//a[text()=\"Class Attribute\"]/../following-sibling::p");
     private static final By dynamicTableLocator= By.xpath("//a[text()=\"Dynamic Table\"]");
     private static final By dynamicTableTextLocator= By.xpath("//a[text()=\"Dynamic Table\"]/../following-sibling::p");
+    private static final By ajaxDataLocator= By.xpath("//a[text()=\"AJAX Data\"]");
+    private static final By ajaxDataTextLocator= By.xpath("//a[text()=\"AJAX Data\"]/../following-sibling::p");
 
 
     public HomePage(WebDriver driver)
@@ -46,5 +48,17 @@ public class HomePage {
             uiActions.clickOnElement(dynamicTableLocator);
         }
         return new DynamicTablePage(driver);
+    }
+
+    public AjaxDataPage openAjaxDataPage()
+    {
+        uiActions.waitForElement(ajaxDataLocator, "clickable");
+        uiActions.waitForElement(ajaxDataTextLocator, "presence");
+
+        if(uiActions.getElementText(ajaxDataTextLocator).contains("Some elements may appear on a page after loading data with AJAX request"))
+        {
+            uiActions.clickOnElement(ajaxDataLocator);
+        }
+        return new AjaxDataPage(driver);
     }
 }
